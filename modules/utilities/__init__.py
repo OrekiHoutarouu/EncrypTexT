@@ -44,9 +44,9 @@ def get_zenit_polar_decrypt_value():
 
 def show_encrypted_or_decrypted_text(encrypted_or_decrypted_text, encrypted_or_decrypted, language="english"):
     new_window = customtkinter.CTkToplevel()
-    new_window.geometry("350x400")
+    new_window.geometry("350x425")
 
-    textbox = customtkinter.CTkTextbox(new_window, width=300, height=400, corner_radius=20)
+    textbox = customtkinter.CTkTextbox(new_window, width=300, height=400, corner_radius=20, fg_color="#2B2B2B")
     textbox.pack()
 
     textbox.insert("0.0", f"Here's your {encrypted_or_decrypted} text in {language}\n\n")
