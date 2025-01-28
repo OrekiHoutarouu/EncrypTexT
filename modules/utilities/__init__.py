@@ -1,3 +1,4 @@
+from modules import decrypt, encrypt
 from types import NoneType
 import customtkinter
 
@@ -7,8 +8,10 @@ def get_binary_encrypted_value():
     
     if decrypted_text == None:
         return
+    
+    encrypted_text = encrypt.encrypt_decrypted_binary(decrypted_text)
 
-    show_encrypted_or_decrypted_text("anything", "encrypted", "binary")
+    show_encrypted_or_decrypted_text(encrypted_text, "encrypted", "binary")
 
 
 def get_binary_decrypted_value():
@@ -35,19 +38,21 @@ def get_hexadecimal_encrypted_value():
 
     if decrypted_text == None:
         return
+    
+    encrypted_text = encrypt.encrypt_decrypted_hexadecimal(decrypted_text)
 
-    show_encrypted_or_decrypted_text("anything", "encrypted", "hexadecimal")
+    show_encrypted_or_decrypted_text(encrypted_text, "encrypted", "hexadecimal")
 
 
 def get_hexadecimal_decrypted_value():
-    dialogue = customtkinter.CTkInputDialog(title="EncrypTexT", text="Type your encrypted text")
+    dialogue = customtkinter.CTkInputDialog(title="EncrypTexT", text="Type your encrypted text (2 digits each character)")
     encrypted_text = dialogue.get_input()
 
     if encrypted_text == None or encrypted_text == NoneType:
         return
     
     while not validate_hexadecimal_encrypted_value(encrypted_text):
-        dialogue = customtkinter.CTkInputDialog(title="EncrypTexT", text="Type a valid hexadecimal code (2 digits each character)", entry_border_color="red")
+        dialogue = customtkinter.CTkInputDialog(title="EncrypTexT", text="Type a valid hexadecimal code", entry_border_color="red")
         encrypted_text = dialogue.get_input()
 
         if encrypted_text == None or encrypted_text == NoneType:
@@ -62,8 +67,10 @@ def get_zenit_polar_encrypted_value():
 
     if decrypted_text == None:
         return
+    
+    encrypted_text = encrypt.encrypt_decrypted_zenit_polar(decrypted_text)
 
-    show_encrypted_or_decrypted_text("anything", "encrypted", "ZENIT POLAR")
+    show_encrypted_or_decrypted_text(encrypted_text, "encrypted", "ZENIT POLAR")
 
 
 def get_zenit_polar_decrypted_value():
@@ -72,6 +79,8 @@ def get_zenit_polar_decrypted_value():
 
     if encrypted_text == None:
         return
+    
+
 
     show_encrypted_or_decrypted_text("anything", "decrypted")
 
@@ -83,7 +92,7 @@ def show_encrypted_or_decrypted_text(encrypted_or_decrypted_text, encrypted_or_d
     textbox = customtkinter.CTkTextbox(new_window, width=300, height=400, corner_radius=20, fg_color="#2B2B2B")
     textbox.pack()
 
-    textbox.insert("0.0", f"Here's your {encrypted_or_decrypted} text in {language}\n\n")
+    textbox.insert("0.0", f"Here's your {encrypted_or_decrypted} text in {language}:\n\n")
     textbox.insert("3.0", encrypted_or_decrypted_text)
     textbox.configure(state="disabled")
 

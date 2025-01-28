@@ -1,4 +1,4 @@
-from modules import encrypt, decrypt, utilities
+from modules import utilities
 import customtkinter 
 
 customtkinter.set_appearance_mode("dark")
