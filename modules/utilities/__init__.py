@@ -1,3 +1,4 @@
+from types import NoneType
 import customtkinter
 
 def get_binary_encrypted_value():
@@ -14,12 +15,15 @@ def get_binary_decrypted_value():
     dialogue = customtkinter.CTkInputDialog(title="EncrypTexT", text="Type your encrypted text (1 byte each character)")
     encrypted_text = dialogue.get_input()
 
-    if encrypted_text == None:
+    if encrypted_text == None or encrypted_text == NoneType:
         return
     
     while not validate_binary_encrypted_value(encrypted_text):
         dialogue = customtkinter.CTkInputDialog(title="EncrypTexT", text="Type a valid binary code", entry_border_color="red")
         encrypted_text = dialogue.get_input()
+
+        if encrypted_text == None or encrypted_text == NoneType:
+            return
 
 
     show_encrypted_or_decrypted_text("anything", "decrypted")
@@ -39,8 +43,15 @@ def get_hexadecimal_decrypted_value():
     dialogue = customtkinter.CTkInputDialog(title="EncrypTexT", text="Type your encrypted text")
     encrypted_text = dialogue.get_input()
 
-    if encrypted_text == None:
+    if encrypted_text == None or encrypted_text == NoneType:
         return
+    
+    while not validate_hexadecimal_encrypted_value(encrypted_text):
+        dialogue = customtkinter.CTkInputDialog(title="EncrypTexT", text="Type a valid hexadecimal code (2 digits each character)", entry_border_color="red")
+        encrypted_text = dialogue.get_input()
+
+        if encrypted_text == None or encrypted_text == NoneType:
+            return
 
     show_encrypted_or_decrypted_text("anything", "decrypted")
 
@@ -89,3 +100,22 @@ def validate_binary_encrypted_value(encrypted_binary_value):
             return False
     
     return encrypted_binary_value
+
+
+def validate_hexadecimal_encrypted_value(encrypted_hexadecimal_value):
+    for character in encrypted_hexadecimal_value:
+        if character == ' ':
+            character = '0'
+
+        if not character.isalnum():
+            return False
+        
+        elif character.isnumeric():
+            if int(character) < 0 or int(character) > 9:
+                return False
+        
+        elif character.isalpha():
+            if (ord(character) < 65 or ord(character) > 70) and (ord(character) < 97 or ord(character) > 102):
+                return False
+    
+    return encrypted_hexadecimal_value
