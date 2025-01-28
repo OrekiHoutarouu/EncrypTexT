@@ -126,8 +126,8 @@ def show_encrypted_or_decrypted_text(encrypted_or_decrypted_text, encrypted_or_d
     Inserts text into the textbox, containing the given arguments. (The text cannot be edited)
 
     Args:
-        encrypted_or_decrypted_text (string): Encrypted or decrypted text that will be shown
-        encrypted_or_decrypted (string): Text telling if the text is encrypted or decrypted
+        encrypted_or_decrypted_text (string): Encrypted or decrypted text that will be shown.
+        encrypted_or_decrypted (string): Text telling if the text is encrypted or decrypted.
         language (string, optional): Type of encrypted or decrypted text. Defaults to "your language".
     """
 
@@ -148,10 +148,10 @@ def validate_binary_encrypted_value(encrypted_binary_value):
     Otherwise, it returns the validated text.
 
     Args:
-        encrypted_binary_value (string): User's unvalidated binary text
+        encrypted_binary_value (string): User's unvalidated binary text.
 
     Returns:
-        string: Validated user's binary text
+        string: Validated user's binary text.
     """
 
     for character in encrypted_binary_value:
@@ -175,10 +175,10 @@ def validate_hexadecimal_encrypted_value(encrypted_hexadecimal_value):
     Otherwise, the function returns the validated text.
 
     Args:
-        encrypted_hexadecimal_value (string): User's unvalidated hexadecimal text
+        encrypted_hexadecimal_value (string): User's unvalidated hexadecimal text.
 
     Returns:
-        string: Validated user's binary text
+        string: Validated user's binary text.
     """
 
     for character in encrypted_hexadecimal_value:

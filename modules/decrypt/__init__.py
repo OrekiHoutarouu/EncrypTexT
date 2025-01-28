@@ -1,4 +1,13 @@
 def decrypt_encrypted_binary(encrypted_text):
+    """Decrypts the user's validated binary text.
+
+    Args:
+        encrypted_text (string): User's validated encrypted binary text.
+
+    Returns:
+        string: Decrypted text.
+    """
+
     decrypted_text = []
     bytes = []
     byte = []
@@ -25,6 +34,15 @@ def decrypt_encrypted_binary(encrypted_text):
 
 
 def decrypt_encrypted_hexadecimal(encrypted_text):
+    """Decrypts the user's validated encrypted hexadecimal text.
+
+    Args:
+        encrypted_text (string): User's validated encrypted hexadecimal text.
+
+    Returns:
+        string: Decrypted text.
+    """
+
     decrypted = []
     bytes = []
     byte = []
@@ -51,6 +69,15 @@ def decrypt_encrypted_hexadecimal(encrypted_text):
 
 
 def decrypt_encrypted_zenit_polar(encrypted_text):
+    """Decrypts the user's encrypted ZENIT POLAR text.
+
+    Args:
+        encrypted_text (string): User's encrypted ZENIT POLAR text.
+
+    Returns:
+        string: Decrypted text.
+    """
+
     decrypted_text = []
     
     for character in encrypted_text:
