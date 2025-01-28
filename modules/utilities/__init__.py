@@ -3,6 +3,12 @@ from types import NoneType
 import customtkinter
 
 def get_binary_encrypted_value():
+    """Gets the user's plain text and closes the tab if there is no input.
+    If there is an input, the user's plain text get sent into the encrypt_decrypted_binary function.
+    The encrypt_decrypted_binary function's return value get sent into the show_encrypted_or_decrypted_text function
+    along with some data about the kind of encrypted text.
+    """
+
     dialogue = customtkinter.CTkInputDialog(title="EncrypTexT", text="Type your plain text")
     decrypted_text = dialogue.get_input()
     
@@ -14,7 +20,14 @@ def get_binary_encrypted_value():
 
 
 def get_binary_decrypted_value():
-    dialogue = customtkinter.CTkInputDialog(title="EncrypTexT", text="Type your encrypted text (1 byte each character)")
+    """Gets the user's encrypted binary text, with 8 digits in each character. The tab closes if there is no input.
+    If there is an input, the user's encrypted binary text get sent into the validate_binary_encrypted_value until a a non-false return value.
+    The validate_binary_encrypted_value function's return value get sent into the decrypt_encrypted_binary function.
+    The decrypt_encrypted_binary function's return value get sent into the show_encrypted_or_decrypted_text function 
+    along with some data about the kind of decrypted text.
+    """
+
+    dialogue = customtkinter.CTkInputDialog(title="EncrypTexT", text="Type your encrypted text (8 digits each character)")
     encrypted_text = dialogue.get_input()
 
     if encrypted_text == None or encrypted_text == NoneType:
@@ -32,6 +45,12 @@ def get_binary_decrypted_value():
 
 
 def get_hexadecimal_encrypted_value():
+    """Gets the user's plain text and closes the tab if there is no input.
+    If there is an input, the user's plain text get sent into the encrypt_decrypted_hexadecimal function.
+    The encrypt_decrypted_hexadecimal function's return value get sent into the show_encrypted_or_decrypted_text function
+    along with some data about the kind of encrypted text.
+    """
+
     dialogue = customtkinter.CTkInputDialog(title="EncrypTexT", text="Type your plain text")
     decrypted_text = dialogue.get_input()
 
@@ -43,6 +62,13 @@ def get_hexadecimal_encrypted_value():
 
 
 def get_hexadecimal_decrypted_value():
+    """Gets the user's encrypted hexadecimal text, with 2 digits in each character. The tab closes if there is no input.
+    If there is an input, the user's encrypted hexadecimal text get sent into the validate_hexadecimal_encrypted_value until a a non-false return value.
+    The validate_hexadecimal_encrypted_value function's return value get sent into the decrypt_encrypted_hexadecimal function.
+    The decrypt_encrypted_hexadecimal function's return value get sent into the show_encrypted_or_decrypted_text function 
+    along with some data about the kind of decrypted text.
+    """
+
     dialogue = customtkinter.CTkInputDialog(title="EncrypTexT", text="Type your encrypted text (2 digits each character)")
     encrypted_text = dialogue.get_input()
 
@@ -61,6 +87,12 @@ def get_hexadecimal_decrypted_value():
 
 
 def get_zenit_polar_encrypted_value():
+    """Gets the user's plain text and closes the tab if there is no input.
+    If there is an input, the user's plain text get sent into the encrypt_decrypted_zenit_polar function.
+    The encrypt_decrypted_zenit_polar function's return value get sent into the show_encrypted_or_decrypted_text function
+    along with some data about the kind of encrypted text.
+    """
+
     dialogue = customtkinter.CTkInputDialog(title="EncrypTexT", text="Type your plain text")
     decrypted_text = dialogue.get_input()
 
@@ -72,6 +104,12 @@ def get_zenit_polar_encrypted_value():
 
 
 def get_zenit_polar_decrypted_value():
+    """Gets the user's plain text and closes the tab if there is no input.
+    If there is an input, the user's plain text get sent into the decrypt_encrypted_zenit_polar function.
+    The decrypt_encrypted_zenit_polar function's return value get sent into the show_encrypted_or_decrypted_text function
+    along with some data about the kind of decrypted text.
+    """
+
     dialogue = customtkinter.CTkInputDialog(title="EncrypTexT", text="Type your encrypted text")
     encrypted_text = dialogue.get_input()
 
@@ -83,6 +121,16 @@ def get_zenit_polar_decrypted_value():
 
 
 def show_encrypted_or_decrypted_text(encrypted_or_decrypted_text, encrypted_or_decrypted, language="your language"):
+    """Creates a new window, with 350px width and 425px height.
+    Creates a textbox inside the window, with 300px width and 400px height.
+    Inserts text into the textbox, containing the given arguments. (The text cannot be edited)
+
+    Args:
+        encrypted_or_decrypted_text (string): Encrypted or decrypted text that will be shown
+        encrypted_or_decrypted (string): Text telling if the text is encrypted or decrypted
+        language (string, optional): Type of encrypted or decrypted text. Defaults to "your language".
+    """
+
     new_window = customtkinter.CTkToplevel()
     new_window.geometry("350x425")
 
@@ -95,6 +143,17 @@ def show_encrypted_or_decrypted_text(encrypted_or_decrypted_text, encrypted_or_d
 
 
 def validate_binary_encrypted_value(encrypted_binary_value):
+    """Validates if the user's input is a binary text by checking if every character is numeric and in between 0 or 1.
+    If the user's input is not a binary text, the function returns false.
+    Otherwise, it returns the validated text.
+
+    Args:
+        encrypted_binary_value (string): User's unvalidated binary text
+
+    Returns:
+        string: Validated user's binary text
+    """
+
     for character in encrypted_binary_value:
         if character == " ":
             character = "0"
@@ -109,6 +168,19 @@ def validate_binary_encrypted_value(encrypted_binary_value):
 
 
 def validate_hexadecimal_encrypted_value(encrypted_hexadecimal_value):
+    """Validates if the user's input is a hexadecimal text by checking if every character is alphanumeric.
+    If the character is numeric, checks if it's in between 0 and 9.
+    If the character is literary, checks if it's in between "A" and "F" or in between "a" and "f". 
+    If the user's input is not a hexadecimal text, the function returns false.
+    Otherwise, the function returns the validated text.
+
+    Args:
+        encrypted_hexadecimal_value (string): User's unvalidated hexadecimal text
+
+    Returns:
+        string: Validated user's binary text
+    """
+
     for character in encrypted_hexadecimal_value:
         if character == ' ':
             character = '0'
