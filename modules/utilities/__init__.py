@@ -10,7 +10,6 @@ def get_binary_encrypted_value():
         return
     
     encrypted_text = encrypt.encrypt_decrypted_binary(decrypted_text)
-
     show_encrypted_or_decrypted_text(encrypted_text, "encrypted", "binary")
 
 
@@ -28,8 +27,8 @@ def get_binary_decrypted_value():
         if encrypted_text == None or encrypted_text == NoneType:
             return
 
-
-    show_encrypted_or_decrypted_text("anything", "decrypted")
+    decrypted_text = decrypt.decrypt_encrypted_binary(encrypted_text)
+    show_encrypted_or_decrypted_text(decrypted_text, "decrypted")
 
 
 def get_hexadecimal_encrypted_value():
@@ -40,7 +39,6 @@ def get_hexadecimal_encrypted_value():
         return
     
     encrypted_text = encrypt.encrypt_decrypted_hexadecimal(decrypted_text)
-
     show_encrypted_or_decrypted_text(encrypted_text, "encrypted", "hexadecimal")
 
 
@@ -57,8 +55,9 @@ def get_hexadecimal_decrypted_value():
 
         if encrypted_text == None or encrypted_text == NoneType:
             return
-
-    show_encrypted_or_decrypted_text("anything", "decrypted")
+        
+    decrypted_text = decrypt.decrypt_encrypted_hexadecimal(encrypted_text)
+    show_encrypted_or_decrypted_text(decrypted_text, "decrypted")
 
 
 def get_zenit_polar_encrypted_value():
@@ -69,7 +68,6 @@ def get_zenit_polar_encrypted_value():
         return
     
     encrypted_text = encrypt.encrypt_decrypted_zenit_polar(decrypted_text)
-
     show_encrypted_or_decrypted_text(encrypted_text, "encrypted", "ZENIT POLAR")
 
 
@@ -80,9 +78,8 @@ def get_zenit_polar_decrypted_value():
     if encrypted_text == None:
         return
     
-
-
-    show_encrypted_or_decrypted_text("anything", "decrypted")
+    decrypted_text = decrypt.decrypt_encrypted_zenit_polar(encrypted_text)
+    show_encrypted_or_decrypted_text(decrypted_text, "decrypted")
 
 
 def show_encrypted_or_decrypted_text(encrypted_or_decrypted_text, encrypted_or_decrypted, language="english"):
