@@ -22,7 +22,7 @@ This project, programmed in python, has a friendly GUI made using customtkinter 
 
 ## How to install and Run EncrypTexT
 
-- Enter the "dist" file on the repository
+- Enter the "dist" folder on the repository
 - Download the "EncrypTexT.exe" file inside the folder
 - If you execute the file and your OS tells you it is not safe, ignore it and open anyways
 
