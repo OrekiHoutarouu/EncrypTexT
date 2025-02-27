@@ -45,7 +45,14 @@ def get_binary_decrypted_value():
 
 
 def get_octal_encrypted_value():
-    print("A")
+    dialogue = customtkinter.CTkInputDialog(title="EncrypTexT", text="Type your plain text")
+    decrypted_text = dialogue.get_input()
+    
+    if decrypted_text == None:
+        return
+    
+    encrypted_text = encrypt.encrypt_decrypted_octal(decrypted_text)
+    show_encrypted_or_decrypted_text(encrypted_text, "encrypted", "octal")
 
 
 def get_octal_decrypted_value():

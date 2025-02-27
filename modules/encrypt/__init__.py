@@ -16,6 +16,15 @@ def encrypt_decrypted_binary(decrypted_text):
     return f"{' '.join(encrypted_text)}"
 
 
+def encrypt_decrypted_octal(decrypted_text):
+    encrypted_text = []
+
+    for character in decrypted_text:
+        encrypted_text.append(f'{ord(character):03o}')
+    
+    return f"{''.join(encrypted_text)}"
+
+
 def encrypt_decrypted_hexadecimal(decrypted_text):
     """Encrypts the user's plain text into hexadecimal text.
 
