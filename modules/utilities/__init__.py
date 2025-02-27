@@ -44,6 +44,14 @@ def get_binary_decrypted_value():
     show_encrypted_or_decrypted_text(decrypted_text, "decrypted")
 
 
+def get_octal_encrypted_value():
+    print("A")
+
+
+def get_octal_decrypted_value():
+    print("B")
+
+
 def get_hexadecimal_encrypted_value():
     """Gets the user's plain text and closes the tab if there is no input.
     If there is an input, the user's plain text get sent into the encrypt_decrypted_hexadecimal function.
