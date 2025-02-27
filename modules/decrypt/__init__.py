@@ -34,6 +34,15 @@ def decrypt_encrypted_binary(encrypted_text):
 
 
 def decrypt_encrypted_octal(encrypted_text):
+    """Decrypts the user's validated octal text.
+
+    Args:
+        encrypted_text (string): User's validated encrypted octal text.
+
+    Returns:
+        string: Decrypted text.
+    """
+    
     decrypted_text = []
     bytes = []
     byte = []

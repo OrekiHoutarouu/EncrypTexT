@@ -17,6 +17,15 @@ def encrypt_decrypted_binary(decrypted_text):
 
 
 def encrypt_decrypted_octal(decrypted_text):
+    """Encrypts the user's plain text into octal text.
+
+    Args:
+        decrypted_text (string): User's plain text.
+
+    Returns:
+        string: Encrypted octal text.
+    """
+    
     encrypted_text = []
 
     for character in decrypted_text:

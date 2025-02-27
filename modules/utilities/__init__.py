@@ -21,7 +21,7 @@ def get_binary_encrypted_value():
 
 def get_binary_decrypted_value():
     """Gets the user's encrypted binary text, with 8 digits in each character. The tab closes if there is no input.
-    If there is an input, the user's encrypted binary text get sent into the validate_binary_encrypted_value until a a non-false return value.
+    If there is an input, the user's encrypted binary text get sent into the validate_binary_encrypted_value until a non-false return value.
     The validate_binary_encrypted_value function's return value get sent into the decrypt_encrypted_binary function.
     The decrypt_encrypted_binary function's return value get sent into the show_encrypted_or_decrypted_text function 
     along with some data about the kind of decrypted text.
@@ -45,6 +45,12 @@ def get_binary_decrypted_value():
 
 
 def get_octal_encrypted_value():
+    """Gets the user's plain text and closes the tab if there is no input.
+    If there is an input, the user's plain text get sent into the encrypt_decrypted_octal function.
+    The encrypt_decrypted_octal function's return value get sent into the show_encrypted_or_decrypted_text function
+    along with some data about the kind of encrypted text.
+    """
+
     dialogue = customtkinter.CTkInputDialog(title="EncrypTexT", text="Type your plain text")
     decrypted_text = dialogue.get_input()
     
@@ -56,6 +62,13 @@ def get_octal_encrypted_value():
 
 
 def get_octal_decrypted_value():
+    """Gets the user's encrypted octal text, with 3 digits in each character. The tab closes if there is no input.
+    If there is an input, the user's encrypted octal text get sent into the validate_octal_encrypted_value until a non-false return value.
+    The validate_octal_encrypted_value function's return value get sent into the decrypt_encrypted_octal function.
+    The decrypt_encrypted_octal function's return value get sent into the show_encrypted_or_decrypted_text function 
+    along with some data about the kind of decrypted text.
+    """
+
     dialogue = customtkinter.CTkInputDialog(title="EncrypTexT", text="Type your encrypted text (3 digits each character)")
     encrypted_text = dialogue.get_input()
 
@@ -92,7 +105,7 @@ def get_hexadecimal_encrypted_value():
 
 def get_hexadecimal_decrypted_value():
     """Gets the user's encrypted hexadecimal text, with 2 digits in each character. The tab closes if there is no input.
-    If there is an input, the user's encrypted hexadecimal text get sent into the validate_hexadecimal_encrypted_value until a a non-false return value.
+    If there is an input, the user's encrypted hexadecimal text get sent into the validate_hexadecimal_encrypted_value until a non-false return value.
     The validate_hexadecimal_encrypted_value function's return value get sent into the decrypt_encrypted_hexadecimal function.
     The decrypt_encrypted_hexadecimal function's return value get sent into the show_encrypted_or_decrypted_text function 
     along with some data about the kind of decrypted text.
@@ -172,7 +185,7 @@ def show_encrypted_or_decrypted_text(encrypted_or_decrypted_text, encrypted_or_d
 
 
 def validate_binary_encrypted_value(encrypted_binary_value):
-    """Validates if the user's input is a binary text by checking if every character is numeric and in between 0 or 1.
+    """Validates if the user's input is a binary text by checking if every character is numeric and in between 0 and 1.
     If the user's input is not a binary text, the function returns false.
     Otherwise, it returns the validated text.
 
@@ -197,6 +210,17 @@ def validate_binary_encrypted_value(encrypted_binary_value):
 
 
 def validate_octal_encrypted_value(encrypted_octal_value):
+    """Validates if the user's input is an octal text by checking if every character is numeric and in between 0 or 7.
+    If the user's input is not an octal text, the function returns false.
+    Otherwise, it returns the validated text.
+
+    Args:
+        encrypted_octal_value (string): User's unvalidated octal text.
+
+    Returns:
+        string: Validated user's octal text.
+    """
+    
     for character in encrypted_octal_value:
         if character == " ":
             character = "0"
