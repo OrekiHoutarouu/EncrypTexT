@@ -33,6 +33,32 @@ def decrypt_encrypted_binary(encrypted_text):
     return f"{''.join(decrypted_text)}"
 
 
+def decrypt_encrypted_octal(encrypted_text):
+    decrypted_text = []
+    bytes = []
+    byte = []
+    counter = 0
+
+    for character in encrypted_text:
+        if character == ' ':
+            character = ''
+            counter -= 1
+
+        byte.append(character)
+        counter += 1
+
+        if counter == 3:
+            bytes.append(''.join(byte)[:])
+            byte.clear()
+            counter = 0
+    
+    for byte in bytes:
+        byte = int(byte, 8)
+        decrypted_text.append(chr(int(byte)))
+
+    return f"{''.join(decrypted_text)}"
+
+
 def decrypt_encrypted_hexadecimal(encrypted_text):
     """Decrypts the user's validated encrypted hexadecimal text.
 

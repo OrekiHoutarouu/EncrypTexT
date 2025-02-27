@@ -56,7 +56,21 @@ def get_octal_encrypted_value():
 
 
 def get_octal_decrypted_value():
-    print("B")
+    dialogue = customtkinter.CTkInputDialog(title="EncrypTexT", text="Type your encrypted text (3 digits each character)")
+    encrypted_text = dialogue.get_input()
+
+    if encrypted_text == None or encrypted_text == NoneType:
+        return
+    
+    while not validate_octal_encrypted_value(encrypted_text):
+        dialogue = customtkinter.CTkInputDialog(title="EncrypTexT", text="Type a valid octal code", entry_border_color="red")
+        encrypted_text = dialogue.get_input()
+
+        if encrypted_text == None or encrypted_text == NoneType:
+            return
+    
+    decrypted_text = decrypt.decrypt_encrypted_octal(encrypted_text)
+    show_encrypted_or_decrypted_text(decrypted_text, "decrypted")
 
 
 def get_hexadecimal_encrypted_value():
@@ -182,6 +196,20 @@ def validate_binary_encrypted_value(encrypted_binary_value):
     return encrypted_binary_value
 
 
+def validate_octal_encrypted_value(encrypted_octal_value):
+    for character in encrypted_octal_value:
+        if character == " ":
+            character = "0"
+        
+        if not character.isnumeric():
+            return False
+        
+        if int(character) < 0 or int(character) > 7:
+            return False
+        
+    return encrypted_octal_value
+
+
 def validate_hexadecimal_encrypted_value(encrypted_hexadecimal_value):
     """Validates if the user's input is a hexadecimal text by checking if every character is alphanumeric.
     If the character is numeric, checks if it's in between 0 and 9.
@@ -197,8 +225,8 @@ def validate_hexadecimal_encrypted_value(encrypted_hexadecimal_value):
     """
 
     for character in encrypted_hexadecimal_value:
-        if character == ' ':
-            character = '0'
+        if character == " ":
+            character = "0"
 
         if not character.isalnum():
             return False
