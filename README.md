@@ -30,6 +30,4 @@ This project, programmed in python, has a friendly GUI made using customtkinter 
 
 ## Tech Stack
 
-**Client:** Python, customtkinter
-
-**Server:** Python, types
+customtkinter, types
