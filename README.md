@@ -8,7 +8,7 @@
 
 ## Description
 
-A binary, hexadecimal and ZENIT POLAR encryptor and decryptor!
+A binary, hexadecimal, octal and ZENIT POLAR encryptor and decryptor!
 
 This project, programmed in python, has a friendly GUI made using customtkinter lib for being easy and practical.
 
@@ -18,6 +18,8 @@ This project, programmed in python, has a friendly GUI made using customtkinter 
 - Decrypts binary texts into plain texts and encrypts plain texts into binary texts 
 - Validates if the user inputted an actual hexadecimal text 
 - Decrypts hexadecimal texts into plain texts and encrypts plain texts into hexadecimal texts 
+- Validates if the user inputted an actual octal text
+- Decrypts octal texts into plain texts and encrypts plain texts into octal texts
 - Decrypts ZENIT POLAR texts into plain texts and encrypts plain texts into ZENIT POLAR texts 
 
 ## How to install and Run EncrypTexT
