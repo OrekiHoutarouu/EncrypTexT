@@ -6,21 +6,21 @@
 ![Licence](https://img.shields.io/github/license/OrekiHoutarouu/EncrypTexT)
 ![Issues](https://img.shields.io/github/issues/OrekiHoutarouu/EncrypTexT)
 
-## Description 📝
+## About 📝
 
-A binary, hexadecimal, octal and ZENIT POLAR encryptor and decryptor!
+EncrypTexT is a message encryptor and decryptor that works by converting text into different numerical bases.
 
-This project, programmed in python, has a friendly GUI made using customtkinter lib for being easy and practical.
+The program transforms each character of a message into its ASCII value and then converts it into formats such as binary, octal, or hexadecimal. It also includes support for the classical ZENIT-POLAR substitution cipher.
+
+The project was developed in Python and provides a simple graphical interface built with CustomTkinter, making the encryption and decryption process easy and intuitive.
 
 ## Features ✨
 
-- Validates if the user inputted an actual binary text 🧑‍💻
-- Decrypts binary texts into plain texts and encrypts plain texts into binary texts 🔐💾
-- Validates if the user inputted an actual hexadecimal text 🔢
-- Decrypts hexadecimal texts into plain texts and encrypts plain texts into hexadecimal texts 🔓🔑
-- Validates if the user inputted an actual octal text 🔠
-- Decrypts octal texts into plain texts and encrypts plain texts into octal texts 🔐🔣
-- Decrypts ZENIT POLAR texts into plain texts and encrypts plain texts into ZENIT POLAR texts 🔒🌀
+- Encryption and decryption using multiple numerical bases (Binary, Octal and Hexadecimal) 🔐🔢
+- Implementation of the classical ZENIT-POLAR substitution cipher 🔒🌀
+- Automatic validation of the input format before processing 🧑‍💻
+- Conversion based on ASCII character encoding 🔤
+- Simple and intuitive graphical user interface (GUI) built with CustomTkinter 🖥️
 
 ## How to install and Run EncrypTexT ⚙️
 
