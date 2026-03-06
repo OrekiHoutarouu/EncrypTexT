@@ -22,6 +22,13 @@ The project was developed in Python and provides a simple graphical interface bu
 - Conversion based on ASCII character encoding 🔤
 - Simple and intuitive graphical user interface (GUI) built with CustomTkinter 🖥️
 
+## Preview 👀
+
+<p align="center">
+  <img src="static/img/Menu.jpeg" width="40%"> 
+  <img src="static/img/Hello_world.jpeg"  height="40%"> 
+</p>
+
 ## How to install and Run EncrypTexT ⚙️
 
 1. Enter the "dist" folder on the repository 📁
