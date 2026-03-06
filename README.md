@@ -36,7 +36,7 @@ The project was developed in Python and provides a simple graphical interface bu
 
 #
 
-1. Enter the realeses page on the repository 📁
+1. Enter the releases page on the repository 📁
 2. Download the latest version inside the page and run it 🖥️
 
 ## Contribution 🤝
